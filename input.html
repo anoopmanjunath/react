@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+              Embedding Expression
+        </title>
+        <script src='https://unpkg.com/babel-standalone@6.26.0/babel.min.js'></script>
+        <script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+        <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script> 
+        
+    </head>
+
+    <body>
+        <div id="root"></div>
+
+        <script type='text/babel'>
+       const rootHandle =  document.getElementById('root');
+
+       let inputText;
+
+       function handleChange(e) {
+           inputText = e.target.value;
+           render2DOM()
+       }
+
+       function render2DOM(){
+           const input =(
+               <div>
+               <input type='text' onChange={handleChange} />
+               <h2> {inputText} </h2>
+               </div>
+           )
+           ReactDOM.render(input,rootHandle);
+       }
+       render2DOM();
+    
+        </script>
+    </body>
+</html>
+
+                                      

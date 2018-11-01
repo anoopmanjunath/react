@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+              Embedding Expression
+        </title>
+        <script src='https://unpkg.com/babel-standalone@6.26.0/babel.min.js'></script>
+        <script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+        <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+        
+    </head>
+
+    <body>
+        <div id="root"></div>
+
+        <script type='text/babel'>
+       const rootHandle =  document.getElementById('root');
+
+
+      function Travel(props){
+          return <h2> The Source is {props.source} and the destination is {props.destination} and distance {props.distance} kms</h2>
+      }
+    
+    ReactDOM.render(<Travel source='Mysore' destination='banglore' distance='230' />,rootHandle);             
+        </script>
+    </body>
+</html>
+

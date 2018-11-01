@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+              Embedding Expression
+        </title>
+        <script src='https://unpkg.com/babel-standalone@6.26.0/babel.min.js'></script>
+        <script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+        <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+        
+    </head>
+
+    <body>
+        <div id="root"></div>
+
+        <script type='text/babel'>
+       const rootHandle =  document.getElementById('root');
+
+       //functional component aka stateless functional component
+
+       //javascript functions
+
+       //function name should be in pascal case -FirstName,LastName
+
+       //these functions takes props as arguments
+       //You can think of functional components like user defined html tags
+
+       //fc should return jsx
+       //porps will be an obj
+
+
+       //component
+       function Person(props){ //properties
+           return <h1> Hi, My Name is {props.name}. Im from {props.location} </h1>
+       }
+       
+
+       //ReactDom.render(Person({ name: 'suri'}), rootHandle);
+
+       ReactDOM.render(<Person name="suri" location="hubli"/>,rootHandle);
+       
+    
+        </script>
+    </body>
+</html>
+

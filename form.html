@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+              Embedding Expression
+        </title>
+        <script src='https://unpkg.com/babel-standalone@6.26.0/babel.min.js'></script>
+        <script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+        <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+        
+    </head>
+
+    <body>
+        <div id="root"></div>
+
+        <script type='text/babel'>
+       const rootHandle =  document.getElementById('root');
+
+        function  handleSubmit(e) {
+            e.preventDefault();
+            //1.Way Of Reading Form Inputs
+            console.log(e.target[0].value);
+            console.log(e.target[1].value);
+
+            //2nd . Way Of Reading Form Inputs
+
+            console.log(e.target.elemnts.firstName.value);
+            console.log(e.target.elemnts.email.value);
+
+            let person = {
+                name: e.target[0].value,
+                email: e.target[1].value
+            } 
+            console.log(person)
+        }
+
+        const form =(
+            <form onSubmit={handleSubmit}>
+            <lable> FirstName </lable><br/>
+            <input type="text" name="firstName" /><br/>
+
+            <lable>Email</lable>
+            <input type="text" name="email" /><br/>
+
+            <input type="submit" value="save" />
+            </form>
+        )
+    ReactDOM.render(form,rootHandle)
+        </script>
+    </body>
+</html>
+
